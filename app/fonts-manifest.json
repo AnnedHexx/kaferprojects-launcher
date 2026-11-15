@@ -1,0 +1,302 @@
+[
+  {
+    "id": "press-start-2p",
+    "family": "Press Start 2P",
+    "category": "Pixel / Retro",
+    "bytes": 12512
+  },
+  {
+    "id": "silkscreen",
+    "family": "Silkscreen",
+    "category": "Pixel / Retro",
+    "bytes": 8404
+  },
+  {
+    "id": "vt323",
+    "family": "VT323",
+    "category": "Terminal",
+    "bytes": 17936
+  },
+  {
+    "id": "pixelify-sans",
+    "family": "Pixelify Sans",
+    "category": "Pixel / Retro",
+    "bytes": 7692
+  },
+  {
+    "id": "jersey-10",
+    "family": "Jersey 10",
+    "category": "Pixel / Retro",
+    "bytes": 13276
+  },
+  {
+    "id": "micro-5",
+    "family": "Micro 5",
+    "category": "Pixel / Retro",
+    "bytes": 8932
+  },
+  {
+    "id": "handjet",
+    "family": "Handjet",
+    "category": "Pixel / Retro",
+    "bytes": 7328
+  },
+  {
+    "id": "bungee",
+    "family": "Bungee",
+    "category": "Arcade / Videojuego",
+    "bytes": 14344
+  },
+  {
+    "id": "luckiest-guy",
+    "family": "Luckiest Guy",
+    "category": "Cómic / Cartoon",
+    "bytes": 17360
+  },
+  {
+    "id": "titan-one",
+    "family": "Titan One",
+    "category": "Cómic / Cartoon",
+    "bytes": 10752
+  },
+  {
+    "id": "bangers",
+    "family": "Bangers",
+    "category": "Cómic / Cartoon",
+    "bytes": 23528
+  },
+  {
+    "id": "russo-one",
+    "family": "Russo One",
+    "category": "Arcade / Videojuego",
+    "bytes": 7344
+  },
+  {
+    "id": "black-ops-one",
+    "family": "Black Ops One",
+    "category": "Arcade / Videojuego",
+    "bytes": 31408
+  },
+  {
+    "id": "lilita-one",
+    "family": "Lilita One",
+    "category": "Cómic / Cartoon",
+    "bytes": 10672
+  },
+  {
+    "id": "sigmar-one",
+    "family": "Sigmar One",
+    "category": "Cómic / Cartoon",
+    "bytes": 44184
+  },
+  {
+    "id": "orbitron",
+    "family": "Orbitron",
+    "category": "Ciencia ficción",
+    "bytes": 6396
+  },
+  {
+    "id": "audiowide",
+    "family": "Audiowide",
+    "category": "Ciencia ficción",
+    "bytes": 14132
+  },
+  {
+    "id": "chakra-petch",
+    "family": "Chakra Petch",
+    "category": "Ciencia ficción",
+    "bytes": 9756
+  },
+  {
+    "id": "monoton",
+    "family": "Monoton",
+    "category": "Ciencia ficción",
+    "bytes": 16492
+  },
+  {
+    "id": "exo-2",
+    "family": "Exo 2",
+    "category": "Ciencia ficción",
+    "bytes": 16720
+  },
+  {
+    "id": "rajdhani",
+    "family": "Rajdhani",
+    "category": "Ciencia ficción",
+    "bytes": 14976
+  },
+  {
+    "id": "cinzel",
+    "family": "Cinzel",
+    "category": "Fantasía / Medieval",
+    "bytes": 14128
+  },
+  {
+    "id": "cinzel-decorative",
+    "family": "Cinzel Decorative",
+    "category": "Fantasía / Medieval",
+    "bytes": 14416
+  },
+  {
+    "id": "medieval-sharp",
+    "family": "MedievalSharp",
+    "category": "Fantasía / Medieval",
+    "bytes": 38788
+  },
+  {
+    "id": "uncial-antiqua",
+    "family": "Uncial Antiqua",
+    "category": "Fantasía / Medieval",
+    "bytes": 19896
+  },
+  {
+    "id": "metamorphous",
+    "family": "Metamorphous",
+    "category": "Fantasía / Medieval",
+    "bytes": 23100
+  },
+  {
+    "id": "creepster",
+    "family": "Creepster",
+    "category": "Terror",
+    "bytes": 28120
+  },
+  {
+    "id": "nosifer",
+    "family": "Nosifer",
+    "category": "Terror",
+    "bytes": 15048
+  },
+  {
+    "id": "eater",
+    "family": "Eater",
+    "category": "Terror",
+    "bytes": 41704
+  },
+  {
+    "id": "fredoka",
+    "family": "Fredoka",
+    "category": "Cómic / Cartoon",
+    "bytes": 16076
+  },
+  {
+    "id": "baloo-2",
+    "family": "Baloo 2",
+    "category": "Cómic / Cartoon",
+    "bytes": 18920
+  },
+  {
+    "id": "permanent-marker",
+    "family": "Permanent Marker",
+    "category": "Manuscrita",
+    "bytes": 29564
+  },
+  {
+    "id": "caveat",
+    "family": "Caveat",
+    "category": "Manuscrita",
+    "bytes": 48836
+  },
+  {
+    "id": "pacifico",
+    "family": "Pacifico",
+    "category": "Manuscrita",
+    "bytes": 32280
+  },
+  {
+    "id": "lobster",
+    "family": "Lobster",
+    "category": "Manuscrita",
+    "bytes": 33844
+  },
+  {
+    "id": "bebas-neue",
+    "family": "Bebas Neue",
+    "category": "Elegante / Seria",
+    "bytes": 13768
+  },
+  {
+    "id": "anton",
+    "family": "Anton",
+    "category": "Elegante / Seria",
+    "bytes": 18612
+  },
+  {
+    "id": "archivo-black",
+    "family": "Archivo Black",
+    "category": "Elegante / Seria",
+    "bytes": 18604
+  },
+  {
+    "id": "oswald",
+    "family": "Oswald",
+    "category": "Elegante / Seria",
+    "bytes": 12248
+  },
+  {
+    "id": "montserrat",
+    "family": "Montserrat",
+    "category": "Elegante / Seria",
+    "bytes": 18780
+  },
+  {
+    "id": "poppins",
+    "family": "Poppins",
+    "category": "Elegante / Seria",
+    "bytes": 7884
+  },
+  {
+    "id": "inter",
+    "family": "Inter",
+    "category": "Elegante / Seria",
+    "bytes": 23664
+  },
+  {
+    "id": "space-mono",
+    "family": "Space Mono",
+    "category": "Monoespaciada",
+    "bytes": 16520
+  },
+  {
+    "id": "ibm-plex-mono",
+    "family": "IBM Plex Mono",
+    "category": "Monoespaciada",
+    "bytes": 14708
+  },
+  {
+    "id": "courier-prime",
+    "family": "Courier Prime",
+    "category": "Monoespaciada",
+    "bytes": 18640
+  },
+  {
+    "id": "share-tech-mono",
+    "family": "Share Tech Mono",
+    "category": "Monoespaciada",
+    "bytes": 13500
+  },
+  {
+    "id": "major-mono-display",
+    "family": "Major Mono Display",
+    "category": "Monoespaciada",
+    "bytes": 17512
+  },
+  {
+    "id": "minecrafter",
+    "family": "Minecrafter",
+    "category": "Videojuegos",
+    "bytes": 2836
+  },
+  {
+    "id": "minecrafter-alt",
+    "family": "Minecrafter Alt",
+    "category": "Videojuegos",
+    "bytes": 7168
+  },
+  {
+    "id": "minecraft",
+    "family": "Minecraft",
+    "category": "Videojuegos",
+    "bytes": 3348
+  }
+]
