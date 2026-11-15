@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self'" />
+  <title>KaferProjects Launcher — Instalación</title>
+  <link rel="stylesheet" href="installer.css" />
+</head>
+<body>
+  <div class="window">
+    <header class="titlebar">
+      <div class="brand">
+        <span class="brand-mark"><img src="../assets/icon.png" alt="KaferProjects Launcher" /></span>
+        <div>
+          <strong>KAFERPROJECTS LAUNCHER</strong>
+          <span>INSTALADOR · v2.4.1</span>
+        </div>
+      </div>
+      <div class="step-track" aria-hidden="true">
+        <span class="dot current" data-dot="1"></span>
+        <span class="dot" data-dot="2"></span>
+        <span class="dot" data-dot="3"></span>
+        <span class="dot" data-dot="4"></span>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="step active" data-step="1" aria-labelledby="welcome-title">
+        <div class="hero">
+          <div class="hero-glow"></div>
+          <img class="hero-bat" src="../assets/icon.png" alt="KaferProjects Launcher" />
+        </div>
+        <span class="kicker">BIENVENIDO</span>
+        <h1 id="welcome-title">Instala KaferProjects Launcher</h1>
+        <p class="lead">
+          El launcher de Minecraft Bedrock con instancias y assets de la red KaferProjects.
+          Este asistente copiará los archivos necesarios en tu equipo.
+        </p>
+        <ul class="feature-list">
+          <li>Instancias y packs en un solo lugar</li>
+          <li>Descarga de assets con caché reutilizable</li>
+          <li>Conexión automática a Minecraft Bedrock</li>
+        </ul>
+      </section>
+
+      <section class="step" data-step="2" aria-labelledby="path-title">
+        <span class="kicker">PASO 2 DE 3</span>
+        <h1 id="path-title">Elige la carpeta de instalación</h1>
+        <p class="lead">KaferProjects Launcher se instalará en la siguiente carpeta. Puedes cambiarla si lo deseas.</p>
+
+        <label class="field-label" for="install-path">Carpeta de instalación</label>
+        <div class="path-row">
+          <span class="path-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></svg>
+          </span>
+          <input id="install-path" type="text" spellcheck="false" />
+          <button id="browse" type="button" class="btn-browse">Examinar…</button>
+        </div>
+        <p class="hint">Por defecto: <span id="default-path">Documentos\KaferProjects Components</span></p>
+        <p id="path-error" class="error" role="alert" hidden></p>
+      </section>
+
+      <section class="step" data-step="3" aria-labelledby="install-title">
+        <span class="kicker">INSTALANDO</span>
+        <h1 id="install-title">Copiando archivos…</h1>
+        <p class="lead">Esto puede tardar unos segundos. No cierres esta ventana.</p>
+
+        <div class="progress-card">
+          <div class="progress-head">
+            <span id="progress-file">Preparando instalación…</span>
+            <strong id="progress-percent">0%</strong>
+          </div>
+          <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar">
+            <div id="progress-fill"></div>
+          </div>
+          <div class="progress-foot">
+            <span id="progress-count">0 archivos</span>
+            <span class="pulse">Instalando KaferProjects Launcher</span>
+          </div>
+        </div>
+        <p id="install-error" class="error" role="alert" hidden></p>
+      </section>
+
+      <section class="step" data-step="4" aria-labelledby="finish-title">
+        <div class="success-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg>
+        </div>
+        <span class="kicker">LISTO</span>
+        <h1 id="finish-title">¡Instalación completada!</h1>
+        <p class="lead">KaferProjects Launcher se instaló correctamente en:</p>
+        <p class="installed-path" id="installed-path"></p>
+
+        <div class="options">
+          <label class="option">
+            <input type="checkbox" id="opt-shortcut" />
+            <span class="checkmark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 13 4 4L19 7"/></svg>
+            </span>
+            <span>
+              <strong>Crear acceso directo en el escritorio</strong>
+              <small>Accede a KaferProjects Launcher con un doble clic.</small>
+            </span>
+          </label>
+          <label class="option">
+            <input type="checkbox" id="opt-startup" />
+            <span class="checkmark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 13 4 4L19 7"/></svg>
+            </span>
+            <span>
+              <strong>Agregar al inicio de Windows</strong>
+              <small>KaferProjects Launcher se abrirá al encender el equipo.</small>
+            </span>
+          </label>
+        </div>
+        <p id="finish-error" class="error" role="alert" hidden></p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <button id="back" type="button" class="btn btn-ghost back" hidden>Atrás</button>
+      <div class="footer-spacer"></div>
+      <button id="cancel" type="button" class="btn btn-ghost">Cancelar</button>
+      <button id="next" type="button" class="btn btn-primary">Siguiente</button>
+      <button id="close" type="button" class="btn btn-ghost finish-btn" hidden>Cerrar</button>
+      <button id="run" type="button" class="btn btn-primary finish-btn" hidden>Ejecutar KaferProjects Launcher</button>
+    </footer>
+  </div>
+  <script src="installer.js"></script>
+</body>
+</html>
