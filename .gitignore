@@ -1,0 +1,50 @@
+# v0 sandbox internal files
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+.snowflake/
+.design-cache/
+.v0-trash/
+.vercel/
+
+# Environment variables (contienen tokens: NUNCA subir)
+.env*.local
+.env
+
+# Common ignores
+node_modules
+node_modules/
+.next/
+.DS_Store
+out/
+dist/
+tsconfig.tsbuildinfo
+*.log
+
+# --- Seguridad: llaves privadas de firma (JAMÁS públicas) ---
+android-app/keystore/
+android-app/*.jks
+*.jks
+*.keystore
+*.pfx
+build/cert.pfx
+
+# --- Android: artefactos de compilación ---
+android-app/android/build/
+android-app/android/app/build/
+android-app/android/.gradle/
+android-app/android/local.properties
+android-app/android/app/src/main/assets/public/
+android-app/android/app/src/main/assets/capacitor.config.json
+android-app/node_modules/
+android-app/www/
+
+# --- Temporales de trabajo ---
+.test-run/
+shots/
+*.etl
+*.pcapng
+
+# Contraseñas de firma Android (CRÍTICO: nunca público)
+android-app/android/keystore.properties
+keystore.properties
