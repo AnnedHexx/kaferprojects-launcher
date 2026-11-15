@@ -1,0 +1,95 @@
+name: Firmar instalador Windows
+
+# ---------------------------------------------------------------------------
+# FIRMA GRATIS CON SIGNPATH FOUNDATION (proyecto de código abierto)
+# ---------------------------------------------------------------------------
+# Configuración inicial (una sola vez):
+#   1. Aplica en https://signpath.org/apply con el repo público
+#      https://github.com/AnnedHexx/kaferprojects-launcher
+#      (verifican que el binario se construye desde ese repositorio).
+#   2. En SignPath.io crea/usa la organización y el proyecto
+#      "kaferprojects-launcher"; añade el Trusted Build System "GitHub.com"
+#      e instala la GitHub App https://github.com/apps/signpath en el repo.
+#   3. Crea una política de firma con slug "release-signing" y su
+#      Artifact Configuration (el artefacto llega como ZIP con el .exe dentro).
+#   4. Crea un API token en SignPath (usuario con permiso de submitter).
+#   5. En GitHub → Settings → Secrets and variables → Actions añade:
+#        - SIGNPATH_API_TOKEN         (token del paso 4)
+#        - SIGNPATH_ORGANIZATION_ID   (lo da SignPath)
+#        - KAFER_CONFIG_TOKEN         (token de Gist del panel admin)
+#        - KAFER_CONFIG_GIST_ID
+#        - KAFER_CONFIG_URL
+#   6. Listo: cada tag "v*" genera un instalador FIRMADO en Releases.
+# ---------------------------------------------------------------------------
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+
+jobs:
+  build-and-sign:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+      actions: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Inyectar configuración de la nube (desde secretos)
+        shell: bash
+        env:
+          KAFER_CONFIG_TOKEN: ${{ secrets.KAFER_CONFIG_TOKEN }}
+          KAFER_CONFIG_GIST_ID: ${{ secrets.KAFER_CONFIG_GIST_ID }}
+          KAFER_CONFIG_URL: ${{ secrets.KAFER_CONFIG_URL }}
+        run: |
+          cat > .env.local <<EOF
+          NEXT_PUBLIC_KAFER_CONFIG_TOKEN=${KAFER_CONFIG_TOKEN}
+          NEXT_PUBLIC_KAFER_CONFIG_GIST_ID=${KAFER_CONFIG_GIST_ID}
+          NEXT_PUBLIC_KAFER_CONFIG_URL=${KAFER_CONFIG_URL}
+          EOF
+
+      - name: Compilar instalador (sin firmar)
+        run: npm run dist
+
+      - name: Subir artefacto sin firmar
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: KaferProjects-Setup
+          path: dist/KaferProjects-Setup-*.exe
+          if-no-files-found: error
+
+      - name: Firmar con SignPath (gratis para código abierto)
+        uses: signpath/github-action-submit-signing-request@v1
+        with:
+          api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
+          organization-id: ${{ secrets.SIGNPATH_ORGANIZATION_ID }}
+          project-slug: kaferprojects-launcher
+          signing-policy-slug: release-signing
+          github-artifact-id: ${{ steps.upload.outputs.artifact-id }}
+          wait-for-completion: true
+          output-artifact-directory: signed
+
+      - name: Subir instalador firmado (siempre descargable)
+        uses: actions/upload-artifact@v4
+        with:
+          name: KaferProjects-Setup-signed
+          path: signed/**/*.exe
+          if-no-files-found: error
+
+      - name: Publicar en Releases (solo al empujar un tag v*)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: signed/**/*.exe
+          generate_release_notes: true
