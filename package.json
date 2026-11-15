@@ -13,7 +13,7 @@
     "desktop": "next build && electron .",
     "desktop:installer": "next build && electron . --installer",
     "desktop:reinstall": "electron . --installer",
-    "dist": "next build && electron-builder --win nsis"
+    "dist": "next build && electron-builder --win nsis --publish never"
   },
   "dependencies": {
     "@xhayper/discord-rpc": "^1.5.1"
